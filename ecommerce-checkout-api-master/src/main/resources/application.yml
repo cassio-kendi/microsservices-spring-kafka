@@ -8,7 +8,7 @@ spring:
       connection-test-query: select 1
   jpa:
     hibernate:
-      ddl-auto: none
+      ddl-auto: create-drop
     properties:
       hibernate:
         default_schema: checkout
