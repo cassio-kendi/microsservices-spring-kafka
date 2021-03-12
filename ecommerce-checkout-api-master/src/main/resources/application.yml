@@ -1,8 +1,9 @@
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/checkout
-    username: checkout
-    password: checkout
+    username: admin
+    password: admin
     driver-class-name: org.postgresql.Driver
     hikari:
       connection-test-query: select 1
@@ -11,7 +12,6 @@ spring:
       ddl-auto: create-drop
     properties:
       hibernate:
-        default_schema: checkout
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
         show_sql: true
@@ -23,7 +23,7 @@ spring:
     stream:
       kafka:
         binder:
-          autoCreateTopics: false
+          autoCreateTopics: true
           brokers: localhost:9092
           configuration:
             value:
@@ -49,3 +49,7 @@ spring:
       schema:
         registry:
           url: http://localhost:8081
+  application:
+    name: checkout-api
+server:
+  port: 8085
